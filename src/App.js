@@ -15,7 +15,7 @@ const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 const HIDDEN_SYMBOL = "_"
 
 const DEFAULT_STATE = {
-  guesses: 0,
+  numberOfWrongGuesses: 0,
   lettersAlreadyUsed: [],
 }
 
@@ -29,8 +29,16 @@ const WordToGuess = ({ wordToGuess, lettersAlreadyUsed }) => (
   </div>
 )
 
-const GuessCount = ({ guesses }) => (
-  <div className="guesses">Number of guesses: {guesses}</div>
+const EndMessage = ({ text, onClick }) => (
+  <div>
+    <div className="wordToGuess">You have {text}!</div>
+    <div className="letterButton" onClick={onClick}> Click here to reset the game... </div>
+  </div>
+  
+)
+
+const GuessCount = ({ numberOfWrongGuesses }) => (
+  <div className="guesses">Number of wrong guesses left: {10 - numberOfWrongGuesses}</div>
 )
 
 const LetterButton = ({ letter, alreadyClicked, onClick }) => (
@@ -54,8 +62,12 @@ class App extends Component {
   handleLetterClick = letter => {
     !this.state.lettersAlreadyUsed.includes(letter) && (
       this.setState({ 
-        guesses: this.state.guesses + 1,
         lettersAlreadyUsed: [...this.state.lettersAlreadyUsed, letter],
+      }))
+      
+    !this.state.lettersAlreadyUsed.includes(letter) && !this.state.wordToGuess.includes(letter) && (
+      this.setState({ 
+        numberOfWrongGuesses: this.state.numberOfWrongGuesses + 1,
       }))
   }
 
@@ -67,15 +79,13 @@ class App extends Component {
   }
 
   render() {
-    const { wordToGuess, guesses, lettersAlreadyUsed } = this.state
+    const { wordToGuess, numberOfWrongGuesses, lettersAlreadyUsed } = this.state
     const won = [...wordToGuess].every(i => lettersAlreadyUsed.includes(i))
+    const lost = numberOfWrongGuesses >= 10
 
     return (
       <div className="pendu">
         <WordToGuess wordToGuess={wordToGuess} lettersAlreadyUsed={lettersAlreadyUsed} />
-        {won ? 
-        <div>gagné!</div> : 
-        <div>perdu</div>}
         {LETTERS.map(letter => (
             <LetterButton 
               letter={letter}
@@ -84,7 +94,9 @@ class App extends Component {
               key={letter}
             />
           ))}
-          <GuessCount guesses={guesses} />
+        <GuessCount numberOfWrongGuesses={numberOfWrongGuesses} />
+        {won && <EndMessage text="won" onClick={this.resetGame}/>}
+        {lost && <EndMessage text="lost" onClick={this.resetGame}/>}
       </div>
     )
   }
