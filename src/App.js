@@ -52,10 +52,11 @@ class App extends Component {
   }
 
   handleLetterClick = letter => {
-    this.setState({ 
-      guesses: this.state.guesses + 1, 
-      lettersAlreadyUsed: [...this.state.lettersAlreadyUsed, letter]
-    })
+    !this.state.lettersAlreadyUsed.includes(letter) && (
+      this.setState({ 
+        guesses: this.state.guesses + 1,
+        lettersAlreadyUsed: [...this.state.lettersAlreadyUsed, letter],
+      }))
   }
 
   resetGame = () => {
@@ -67,10 +68,14 @@ class App extends Component {
 
   render() {
     const { wordToGuess, guesses, lettersAlreadyUsed } = this.state
+    const won = [...wordToGuess].every(i => lettersAlreadyUsed.includes(i))
 
     return (
       <div className="pendu">
         <WordToGuess wordToGuess={wordToGuess} lettersAlreadyUsed={lettersAlreadyUsed} />
+        {won ? 
+        <div>gagné!</div> : 
+        <div>perdu</div>}
         {LETTERS.map(letter => (
             <LetterButton 
               letter={letter}
