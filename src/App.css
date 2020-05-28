@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pendu {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  width: 450px;
+  margin: auto;
+  user-select: none;
 }
 
-.App-link {
-  color: #61dafb;
+.wordToGuess
+{
+  font-size: 2em;
+  width: calc(100% - 0.4em);
+  margin: 0.2em;
+  text-align: center;
+  font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.guesses {
+  font-size: 1em;
+  width: calc(100% - 0.4em);
+  margin: 0.2em;
+  text-align: right;
+  font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
+}
+
+.letterButton {
+  font-size: 2em;
+  flex: 1 1 calc(100% / 11.5 - 0.4em);
+  outline: 0.08em solid silver;
+  margin: 0.1em;
+  display: flex;
+  cursor: default;
+}
+
+.letterButton.true {
+  background: silver;
+}
+
+.letter{
+  margin: auto;
 }
