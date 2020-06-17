@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pendu-game/static/css/main.9eda47e4.chunk.css",
+    "main.js": "/pendu-game/static/js/main.19bcf992.chunk.js",
+    "main.js.map": "/pendu-game/static/js/main.19bcf992.chunk.js.map",
+    "runtime-main.js": "/pendu-game/static/js/runtime-main.4b73a932.js",
+    "runtime-main.js.map": "/pendu-game/static/js/runtime-main.4b73a932.js.map",
+    "static/js/2.5f9a8d7f.chunk.js": "/pendu-game/static/js/2.5f9a8d7f.chunk.js",
+    "static/js/2.5f9a8d7f.chunk.js.map": "/pendu-game/static/js/2.5f9a8d7f.chunk.js.map",
+    "index.html": "/pendu-game/index.html",
+    "precache-manifest.f153851a4fea0ea730f732d2be7f4c14.js": "/pendu-game/precache-manifest.f153851a4fea0ea730f732d2be7f4c14.js",
+    "service-worker.js": "/pendu-game/service-worker.js",
+    "static/css/main.9eda47e4.chunk.css.map": "/pendu-game/static/css/main.9eda47e4.chunk.css.map",
+    "static/js/2.5f9a8d7f.chunk.js.LICENSE.txt": "/pendu-game/static/js/2.5f9a8d7f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4b73a932.js",
+    "static/js/2.5f9a8d7f.chunk.js",
+    "static/css/main.9eda47e4.chunk.css",
+    "static/js/main.19bcf992.chunk.js"
+  ]
+}
