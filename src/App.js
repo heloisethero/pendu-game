@@ -1,16 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
 
+// Ressources found here: http://www.idees-gages.com/mots-jeu-pendu.php
 const POSSIBLE_WORDS = [
   "BALLAST", 
+  "BRETZEL",
+  "DJEMBE",
+  "JOUXTER",
+  "RENEGAT",
+  "STROPHE",
+  'UKELELE',
+  "ZOZOTER",
   "CITHARE", 
-  "QUETSCHE", 
+  "QUETSCHE",
+  "PASTICHE",
+  "CAPELINE",
+  "PASTICHE",
+  "SYMPTOME",
+  "ZEPPELIN", 
   "TOMAHAWK", 
   "BALALAIKA", 
+  "ASEPTISER",
+  "KLAXONNER",
+  "PRINTEMPS",
+  "XYLOPHONE",
   "QUEMANDER",
   "FLIBUSTIER",
+  "APOCALYPSE",
+  "CONTROVERSE",
+  "LABYRINTHE",
+  "SOLILOQUER",
+  "COQUELICOT",
+  "ACROSTICHE",
   "MAHARADJAH"
 ]
+
 const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 const HIDDEN_SYMBOL = "_"
 
@@ -29,14 +53,6 @@ const WordToGuess = ({ wordToGuess, lettersAlreadyUsed }) => (
   </div>
 )
 
-const EndMessage = ({ text, onClick }) => (
-  <div>
-    <div className="wordToGuess">You have {text}!</div>
-    <div className="letterButton" onClick={onClick}> Click here to reset the game... </div>
-  </div>
-  
-)
-
 const GuessCount = ({ numberOfWrongGuesses }) => (
   <div className="guesses">Number of wrong guesses left: {10 - numberOfWrongGuesses}</div>
 )
@@ -48,6 +64,19 @@ const LetterButton = ({ letter, alreadyClicked, onClick }) => (
     </span>
   </div>
   )
+
+const EndMessage = ({ text, onClick }) => (
+  <div>
+    <div className="resetButton" onClick={onClick}> Click here to reset the game... </div>
+    <div className="endMessage">You have {text}!</div>
+  </div>
+)
+
+const ShowWordToGuess = ({ wordToGuess }) => (
+  <div className="endMessage">
+    The word was: {[...wordToGuess].map((letter, index) =>(<span key={index}>{letter}</span>))}.
+  </div>
+)
 
 class App extends Component {
   state = {
@@ -85,7 +114,10 @@ class App extends Component {
 
     return (
       <div className="pendu">
-        <WordToGuess wordToGuess={wordToGuess} lettersAlreadyUsed={lettersAlreadyUsed} />
+        <WordToGuess 
+          wordToGuess={wordToGuess} 
+          lettersAlreadyUsed={lettersAlreadyUsed} 
+        />
         {LETTERS.map(letter => (
             <LetterButton 
               letter={letter}
@@ -97,6 +129,7 @@ class App extends Component {
         <GuessCount numberOfWrongGuesses={numberOfWrongGuesses} />
         {won && <EndMessage text="won" onClick={this.resetGame}/>}
         {lost && <EndMessage text="lost" onClick={this.resetGame}/>}
+        {lost && <ShowWordToGuess wordToGuess={wordToGuess}/>}
       </div>
     )
   }

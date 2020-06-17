@@ -15,14 +15,6 @@
   font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
 }
 
-.guesses {
-  font-size: 1em;
-  width: calc(100% - 0.4em);
-  margin: 0.2em;
-  text-align: right;
-  font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
-}
-
 .letterButton {
   font-size: 2em;
   flex: 1 1 calc(100% / 11.5 - 0.4em);
@@ -38,4 +30,30 @@
 
 .letter{
   margin: auto;
+}
+
+.guesses {
+  font-size: 1em;
+  width: calc(100% - 0.4em);
+  margin: 0.2em;
+  text-align: right;
+  font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
+}
+
+.resetButton {
+  font-size: 1.5em;
+  padding: 5px;
+  width: 450px;
+  text-align: center;
+  margin: 0.1em;
+  outline: 0.08em solid silver;
+  background: rgb(238, 167, 167);
+}
+
+.endMessage {
+  font-size: 1.5em;
+  width: calc(100% - 0.4em);
+  margin: 0.2em;
+  text-align: center;
+  font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
 }
