@@ -1,23 +1,26 @@
 .pendu {
+  /* border: 2px solid black; */
   display: flex;
   flex-wrap: wrap;
-  width: 450px;
+  width: 100%;
+  max-width: 1000px;
   margin: auto;
+  margin-top: 20px;
   user-select: none;
 }
 
-.wordToGuess
-{
-  font-size: 2em;
+.word-to-guess {
+  /* border: 2px solid black; */
+  font-size: 3em;
   width: calc(100% - 0.4em);
-  margin: 0.2em;
+  margin: 1em;
   text-align: center;
   font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
 }
 
 .letterButton {
   font-size: 2em;
-  flex: 1 1 calc(100% / 11.5 - 0.4em);
+  flex: 1 1 calc(100% / 12 - 0.5em);
   outline: 0.08em solid silver;
   margin: 0.1em;
   display: flex;
@@ -33,27 +36,30 @@
 }
 
 .guesses {
-  font-size: 1em;
+  /* border: 2px solid black; */
+  font-size: 1.5em;
+  margin: 1em;
   width: calc(100% - 0.4em);
-  margin: 0.2em;
   text-align: right;
   font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
 }
 
-.resetButton {
-  font-size: 1.5em;
-  padding: 5px;
-  width: 450px;
-  text-align: center;
-  margin: 0.1em;
-  outline: 0.08em solid silver;
-  background: rgb(238, 167, 167);
-}
-
-.endMessage {
-  font-size: 1.5em;
+.end-message {
+  /* border: 2px solid black; */
+  font-size: 2em;
   width: calc(100% - 0.4em);
-  margin: 0.2em;
+  margin: auto;
   text-align: center;
   font-family: Menlo, Monaco, Consolas, Inconsolata, 'Courier New', monospace;
+}
+
+.reset-button {
+  font-size: 2em;
+  padding: 15px 40px 15px 40px;
+  text-align: center;
+  width: 50%;
+  min-width: 200px;
+  margin: 0.5em auto 0.5em auto;
+  outline: 0.08em solid silver;
+  background: rgb(238, 167, 167);
 }
