@@ -57,6 +57,8 @@ const POSSIBLE_WORDS = [
   "CERVELET"
 ]
 
+const maximumOfWrongGuesses = 4
+
 const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 const HIDDEN_SYMBOL = "_"
 
@@ -76,7 +78,7 @@ const WordToGuess = ({ wordToGuess, lettersAlreadyUsed }) => (
 )
 
 const GuessCount = ({ numberOfWrongGuesses }) => (
-  <div className="guesses">Number of wrong guesses left: {10 - numberOfWrongGuesses}</div>
+  <div className="guesses">Nombre d'essais restants: {maximumOfWrongGuesses - numberOfWrongGuesses}</div>
 )
 
 const LetterButton = ({ letter, alreadyClicked, onClick }) => (
@@ -89,14 +91,14 @@ const LetterButton = ({ letter, alreadyClicked, onClick }) => (
 
 const EndMessage = ({ text, onClick }) => (
   <div>
-    <div className="resetButton" onClick={onClick}> Click here to reset the game... </div>
-    <div className="endMessage">You have {text}!</div>
+    <div className="resetButton" onClick={onClick}> Cliquez ici pour rejouer </div>
+    <div className="endMessage">Vous avez {text} !</div>
   </div>
 )
 
 const ShowWordToGuess = ({ wordToGuess }) => (
   <div className="endMessage">
-    The word was: {[...wordToGuess].map((letter, index) =>(<span key={index}>{letter}</span>))}.
+    Le mot à deviner était : {[...wordToGuess].map((letter, index) =>(<span key={index}>{letter}</span>))}.
   </div>
 )
 
@@ -132,7 +134,7 @@ class App extends Component {
   render() {
     const { wordToGuess, numberOfWrongGuesses, lettersAlreadyUsed } = this.state
     const won = [...wordToGuess].every(i => lettersAlreadyUsed.includes(i))
-    const lost = numberOfWrongGuesses >= 10
+    const lost = numberOfWrongGuesses >= maximumOfWrongGuesses
 
     return (
       <div className="pendu">
@@ -149,8 +151,8 @@ class App extends Component {
             />
           ))}
         <GuessCount numberOfWrongGuesses={numberOfWrongGuesses} />
-        {won && <EndMessage text="won" onClick={this.resetGame}/>}
-        {lost && <EndMessage text="lost" onClick={this.resetGame}/>}
+        {won && <EndMessage text="gagné" onClick={this.resetGame}/>}
+        {lost && <EndMessage text="perdu" onClick={this.resetGame}/>}
         {lost && <ShowWordToGuess wordToGuess={wordToGuess}/>}
       </div>
     )
