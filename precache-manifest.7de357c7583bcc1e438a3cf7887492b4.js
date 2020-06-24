@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "735cadddf92fce58111a5449d8a91105",
+    "revision": "3be1b4a282e3c2d6721c350c6fbbe5e7",
     "url": "/pendu-game/index.html"
   },
   {
-    "revision": "e205b481efb7341544d6",
+    "revision": "734df251419aecdd34b5",
     "url": "/pendu-game/static/css/main.9290b947.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pendu-game/static/js/2.5f9a8d7f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e205b481efb7341544d6",
-    "url": "/pendu-game/static/js/main.9f57f7b5.chunk.js"
+    "revision": "734df251419aecdd34b5",
+    "url": "/pendu-game/static/js/main.7dd15ee2.chunk.js"
   },
   {
     "revision": "4825ab918ec9c6f7dff8",

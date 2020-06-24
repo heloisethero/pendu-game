@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pendu-game/precache-manifest.df6f774c6ce2a04af9f304cb9ad6e357.js"
+  "/pendu-game/precache-manifest.7de357c7583bcc1e438a3cf7887492b4.js"
 );
 
 self.addEventListener('message', (event) => {
