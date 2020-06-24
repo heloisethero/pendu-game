@@ -91,8 +91,8 @@ const LetterButton = ({ letter, alreadyClicked, onClick }) => (
 
 const EndMessage = ({ text, onClick }) => (
   <div>
-    <div className="resetButton" onClick={onClick}> Cliquez ici pour rejouer </div>
     <div className="endMessage">Vous avez {text} !</div>
+    <div className="resetButton" onClick={onClick}> Cliquez ici pour rejouer </div>
   </div>
 )
 
