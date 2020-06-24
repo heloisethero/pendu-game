@@ -57,7 +57,7 @@ const POSSIBLE_WORDS = [
   "CERVELET"
 ]
 
-const maximumOfWrongGuesses = 4
+const maximumOfWrongGuesses = 8
 
 const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 const HIDDEN_SYMBOL = "_"
