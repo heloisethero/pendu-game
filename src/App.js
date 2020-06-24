@@ -1,40 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// Ressources found here: http://www.idees-gages.com/mots-jeu-pendu.php
-// const POSSIBLE_WORDS = [
-//   "BALLAST", 
-//   "BRETZEL",
-//   "DJEMBE",
-//   "JOUXTER",
-//   "RENEGAT",
-//   "STROPHE",
-//   'UKELELE',
-//   "ZOZOTER",
-//   "CITHARE", 
-//   "QUETSCHE",
-//   "PASTICHE",
-//   "CAPELINE",
-//   "PASTICHE",
-//   "SYMPTOME",
-//   "ZEPPELIN", 
-//   "TOMAHAWK", 
-//   "BALALAIKA", 
-//   "ASEPTISER",
-//   "KLAXONNER",
-//   "PRINTEMPS",
-//   "XYLOPHONE",
-//   "QUEMANDER",
-//   "FLIBUSTIER",
-//   "APOCALYPSE",
-//   "CONTROVERSE",
-//   "LABYRINTHE",
-//   "SOLILOQUER",
-//   "COQUELICOT",
-//   "ACROSTICHE",
-//   "MAHARADJAH"
-// ]
-
 const POSSIBLE_WORDS = [
   "NEURONE",
   "CERVEAU",
