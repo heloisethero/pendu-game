@@ -1,7 +1,7 @@
 {
   "homepage": "https://heloisethero.github.io/pendu-game",
   "name": "pendu",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "lodash.shuffle": "^4.2.0",
